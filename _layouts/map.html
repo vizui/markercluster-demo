@@ -1,0 +1,67 @@
+{% include header.html %}
+<div id="content-main" class="container">
+    <section>
+        <h2>E-Rate Map</h2>
+        <div class="map-box">
+            <div id="map"></div>
+            <div class="map-footer"> View Schools by:
+                <ul class="list-layerSwitch list-unstyled list-inline">
+                    <li><a href="#desc-congrDist" id="congrDist" class="active">Congressional District</a></li>
+                    <li><a href="#desc-cnty" id="cnty">County</a></li>
+                    <li><a href="#desc-schoolDist" id="schoolDist">Unified School District</a></li>
+                </ul>
+                <p class="help-block">Click to display results.</p>
+            </div>
+        </div>
+    </section>
+    <div class="row">
+        <section class="col-xs-6 col-sm-4 col-med-4">
+            <dl class="dl-stats">                
+                <dt>State:</dt>
+                <dd><span id="stat-state">----</span></dd>
+                <dt>Geography Description</dt>
+                <dd><span id="stat-geoDesc">----</span></dd>
+                <dt>FIPS Code</dt>
+                <dd><span id="stat-geoID">----</span></dd>
+            </dl>
+        </section>
+        <section class="col-xs-6 col-sm-4 col-med-4">
+            
+            <dl class="dl-stats dl-inline">
+                <dt>Total Schools in Geography</dt>
+                <dd><span id="stat-totSchools">----</span></dd>
+                <dt>Number of Schools with Likely Fiber Access</dt>
+                <dd><span id="stat-fiber">----</span></dd>
+                <dt>% of Schools with Likely Fiber Access</dt>
+                <dd><span id="stat-pctSchool">----</span></dd>
+            </dl>
+        </section>
+        <div class="col-xs-12 col-sm-4 col-med-4">
+            <table class="map-legend table">
+                <caption>
+                % of Schools with Fiber
+                </caption>
+                <tbody>
+                    <tr>
+                        <th>&lt; 25%</th>
+                        <td><span style="background-color: #cce0d6"> </span></td>
+                    </tr>
+                    <tr>
+                        <th>&ge; 25% and &lt; 50%</th>
+                        <td><span style="background-color: #99c1ad"> </span></td>
+                    </tr>
+                    <tr>
+                        <th>&ge; 50% and &lt; 75%</th>
+                        <td><span style="background-color: #4c9370"> </span></td>
+                    </tr>
+                    <tr>
+                        <th>&ge; 75%</th>
+                        <td><span style="background-color: #006633"> </span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{ content }} 
+</div>
+{% include footer.html %}
